@@ -4,8 +4,15 @@
       <div class="chat-content">
         <p>
           {{ message.text }} <br /><br />
-          {{ new Date(message.timestamp).toLocaleDateString() }}:
-          {{ message.timestamp.toString().substr(11, 8) }} (GMT)
+          {{ new Date(message.timestamp).toLocaleDateString() }}
+          <span
+            v-if="
+              message.text !==
+                'WELCOME TO THE CHAT APP, YOU CAN ADD A NEW MESSAGE BY TYPING IN THE BOX BELOW. ALL MESSAGES WILL BE DISPLAYED BELOW!'
+            "
+          >
+            : {{ message.timestamp.toString().substr(11, 8) }} (GMT)
+          </span>
         </p>
       </div>
     </div>
