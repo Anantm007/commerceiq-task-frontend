@@ -27,6 +27,7 @@ export default {
 <style scoped>
 .chat-body {
   overflow-y: scroll;
+  border-radius: 4px;
   height: 28rem !important;
 }
 

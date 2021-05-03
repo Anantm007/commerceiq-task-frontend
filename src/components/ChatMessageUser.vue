@@ -2,11 +2,10 @@
   <div class="chat">
     <div class="chat-body">
       <div class="chat-content">
-        {{ message.text }} <br />
-        (
+        {{ message.text }} <br /><br />
+
         {{ new Date(message.timestamp).toLocaleDateString() }}:
-        {{ message.timestamp.toString().substr(16, 8) }}
-        )
+        {{ message.timestamp.toString().substr(16, 8) }} (IST)
       </div>
     </div>
   </div>

@@ -3,9 +3,9 @@
     <div class="chat-body">
       <div class="chat-content">
         <p>
-          {{ message.text }} <br />
-          ( {{ new Date(message.timestamp).toLocaleDateString() }}:
-          {{ message.timestamp.toString().substr(11, 8) }} (GMT) )
+          {{ message.text }} <br /><br />
+          {{ new Date(message.timestamp).toLocaleDateString() }}:
+          {{ message.timestamp.toString().substr(11, 8) }} (GMT)
         </p>
       </div>
     </div>
@@ -69,7 +69,8 @@ export default {
   float: left;
   margin: 0 0 0.625rem -10px;
   color: #76838f;
-  background-color: #dfe9ef;
+  background-color: #f4f4f4;
+  color: #000;
 }
 
 .chat-left .chat-content:before {

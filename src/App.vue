@@ -14,9 +14,3 @@ export default {
   components: { ChatWindow },
 };
 </script>
-
-<style>
-body {
-  background: #e1f1dd;
-}
-</style>

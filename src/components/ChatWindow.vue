@@ -103,7 +103,7 @@ export default {
     const firstMsg = {
       id: 0,
       text:
-        "WELCOME THE CHAT APPLICATION, YOU CAN ADD A NEW MESSAGE BY TYPING IN THE BOX BELOW. I WILL DISPLAY ALL THE MESSAGES FOR YOU!",
+        "WELCOME TO THE CHAT APP, YOU CAN ADD A NEW MESSAGE BY TYPING IN THE BOX BELOW. ALL MESSAGES WILL BE DISPLAYED BELOW!",
       timestamp: new Date(),
     };
 
@@ -127,5 +127,6 @@ export default {
   border: 1px solid black;
   border-radius: 5px;
   background: #344fa1 !important;
+  border: 3px solid black;
 }
 </style>
