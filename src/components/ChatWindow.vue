@@ -4,6 +4,10 @@
     <ChatHeader />
 
     <!-- Chat body, where all the messages are displayed -->
+    <div v-if="loading">
+      <Spinner />
+    </div>
+
     <ChatBody :allMessages="allMessages" />
 
     <!-- Add a new message form -->
@@ -17,6 +21,8 @@ import ChatHeader from "./ChatHeader";
 import ChatBody from "./ChatBody";
 import SendMessage from "./SendMessage";
 
+import Spinner from "./Spinner";
+
 // Base URL to make request to the server
 const BASE_URL = "https://commerce-task.anantmathur.me/api";
 
@@ -29,6 +35,7 @@ export default {
     ChatHeader,
     ChatBody,
     SendMessage,
+    Spinner,
   },
 
   /* State of this component
@@ -41,6 +48,7 @@ export default {
       adminMessages: [],
       userMessages: [],
       allMessages: [],
+      loading: false,
     };
   },
 
@@ -49,6 +57,8 @@ export default {
      * @params: message - text message to store
      */
     async addMessage(message) {
+      this.loading = true;
+
       // Message object tailored according to the backend
       const msg = {
         id: Math.floor(Math.random() * 100000),
@@ -85,11 +95,15 @@ export default {
         msg["owner"] = "admin";
         this.allMessages.push(msg);
       });
+
+      this.loading = false;
     },
   },
 
   // Lifecycle method invoked when the component renders
   async created() {
+    this.loading = true;
+
     // Fetch all the existing messages from the server
     const res = await fetch(`${BASE_URL}/messages`);
 
@@ -115,6 +129,8 @@ export default {
       msg["owner"] = "admin";
       this.allMessages.push(msg);
     });
+
+    this.loading = false;
   },
 };
 </script>
