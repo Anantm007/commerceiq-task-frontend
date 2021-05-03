@@ -40,6 +40,7 @@ export default {
       // Checking if the text message is not empty
       if (!this.message || this.message === "") {
         alert("Please add a message!");
+        return;
       }
 
       // Emit it to parent component so the message can be added to the DB
