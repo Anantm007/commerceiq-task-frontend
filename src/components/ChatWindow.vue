@@ -80,29 +80,6 @@ export default {
       // Convert response to json
       const data = await res.json();
 
-      // The backend returns all the messages (including the new one)
-      // const messages = data.data;
-
-      // // adminMessages state is updated to have this new message
-      // this.adminMessages = data.data;
-
-      // // userMessages will now also include the message we sent
-      // this.userMessages = [...this.userMessages, data.data[data.length - 1]];
-
-      // // The allMessages array will contain this object but with the user as owner (to help in segregation)
-      // this.allMessages.push({ ...msg, owner: "user" });
-
-      // // Add owner property (as admin) to these messages and push into the allMessages array
-      // data.data.map((msg) => {
-      //   msg["owner"] = "admin";
-      //   this.allMessages.push(msg);
-      // });
-
-      // this.loading = false;
-
-      // this.userMessages = data.data[data.length - 1];
-      // this.adminMessages = data.data[data.length - 1];
-
       const obj = {
         ...data.data[data.length - 1],
         owner: this.isAdminMessage ? "admin" : "user",
@@ -113,8 +90,10 @@ export default {
       this.isAdminMessage = !this.isAdminMessage;
 
       // Scroll to bottom of the div
-      var container = this.$el.querySelector("#scrollDivId");
-      container.scrollTop = container.scrollHeight;
+      const container = this.$el.querySelector("#scrollDivId");
+      this.$nextTick(() => {
+        container.scrollTop = container.scrollHeight;
+      });
     },
   },
 
