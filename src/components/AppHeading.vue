@@ -1,20 +1,19 @@
 <template>
-  <h6 class="my-heading">
-    Welcome To Live Chat!
-  </h6>
+  <div>
+    <h2>CommerceIQ - Task: Chat Application!</h2>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "ChatHeader",
+  name: "AppHeading",
 };
 </script>
 
 <style scoped>
-.my-heading {
-  color: white;
+h2 {
   text-align: center;
-  margin: 1rem auto;
   font-weight: bold;
+  margin: 3rem auto 0 auto;
 }
 </style>

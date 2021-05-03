@@ -97,6 +97,10 @@ export default {
       });
 
       this.loading = false;
+
+      // Scroll to bottom of the div
+      var container = this.$el.querySelector("#scrollDivId");
+      container.scrollTop = container.scrollHeight;
     },
   },
 

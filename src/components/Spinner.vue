@@ -2,9 +2,8 @@
   <img
     src="../../public/spinner.gif"
     :style="{
-      width: '45%',
-      margin: 'auto',
-      marginBottom: '2rem',
+      width: '.2rem',
+      marginBottom: '.2rem',
       display: 'block',
     }"
     alt="Loading..."

@@ -1,5 +1,5 @@
 <template>
-  <div class="chat-body">
+  <div class="chat-body" id="scrollDivId">
     <div class="chats">
       <ChatMessages :allMessages="allMessages" />
     </div>
@@ -28,7 +28,7 @@ export default {
 .chat-body {
   overflow-y: scroll;
   border-radius: 4px;
-  height: 28rem !important;
+  height: 15rem !important;
 }
 
 /*Custom scrollbar to make it visible on mobile devices*/
