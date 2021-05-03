@@ -25,6 +25,7 @@ import Spinner from "./Spinner";
 
 // Base URL to make request to the server
 const BASE_URL = "https://commerce-task.anantmathur.me/api";
+// const BASE_URL = "http://localhost:8001/api";
 
 export default {
   // Name of the component
@@ -85,7 +86,7 @@ export default {
       this.adminMessages = data.data;
 
       // userMessages will now also include the message we sent
-      this.userMessages = [...this.userMessages, msg];
+      this.userMessages = [...this.userMessages, data.data[data.length - 1]];
 
       // The allMessages array will contain this object but with the user as owner (to help in segregation)
       this.allMessages.push({ ...msg, owner: "user" });

@@ -5,7 +5,12 @@
         {{ message.text }} <br /><br />
 
         {{ new Date(message.timestamp).toLocaleDateString() }}:
-        {{ message.timestamp.toString().substr(16, 8) }} (IST)
+        {{
+          new Date(message.timestamp).toLocaleTimeString(undefined, {
+            timeZone: "Asia/Kolkata",
+          })
+        }}
+        (IST)
       </div>
     </div>
   </div>

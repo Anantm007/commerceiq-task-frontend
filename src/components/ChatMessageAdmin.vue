@@ -11,7 +11,13 @@
                 'WELCOME TO THE CHAT APP, YOU CAN ADD A NEW MESSAGE BY TYPING IN THE BOX BELOW. ALL MESSAGES WILL BE DISPLAYED BELOW!'
             "
           >
-            : {{ message.timestamp.toString().substr(11, 8) }} (GMT)
+            :
+            {{
+              new Date(message.timestamp).toLocaleTimeString(undefined, {
+                timeZone: "Asia/Kolkata",
+              })
+            }}
+            (IST)
           </span>
         </p>
       </div>
